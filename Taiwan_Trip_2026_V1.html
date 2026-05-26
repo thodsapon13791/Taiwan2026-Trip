@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#002060">
+<title>🇹🇼 แผนเที่ยวไต้หวัน 2026 (Editable Ver.)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f1f5f9;color:#18181b;min-height:100vh}
+.hdr{background:#002060;color:#fff;padding:10px 12px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,32,.3)}
+.ht{font-size:14px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between}
+.hdr-btns{display:flex;gap:6px}
+.share-btn{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:11px;padding:4px 10px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:4px}
+.share-btn:active{background:rgba(255,255,255,.35)}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:7px 11px;border-radius:7px 7px 0 0;font-size:12px;font-weight:500;cursor:pointer;color:rgba(255,255,255,.55);background:rgba(255,255,255,.1);border:none;white-space:nowrap;transition:.15s}
+.tab.on{background:#fff;color:#002060}
+.wrap{max-width:480px;margin:0 auto}
+.scr{display:none;padding:11px}
+.scr.on{display:block}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px;margin-top:4px}
+.kc{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 1px 5px rgba(0,0,0,.06)}
+.kl{font-size:10px;color:#71717a;margin-bottom:2px}
+.kv{font-size:20px;font-weight:700}
+.ks{font-size:10px;color:#71717a;margin-top:1px}
+.sec{font-size:10px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:.05em;margin:13px 0 7px;display:flex;justify-content:space-between;align-items:center}
+.bcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.06);margin-bottom:11px}
+.brow{display:flex;align-items:center;padding:8px 11px;border-bottom:.5px solid #e4e4e7;gap:7px;font-size:11px}
+.brow:last-child{border-bottom:none}
+.brow.tot{background:#002060;color:#fff}
+.bic{width:18px;text-align:center;flex-shrink:0}
+.bnm{flex:1}
+.bpl{width:54px;text-align:right;color:#71717a;font-size:10px}
+.bac{width:54px;text-align:right;font-weight:600}
+.bdf{width:48px;text-align:right;border-radius:5px;padding:1px 4px;font-size:10px}
+.dok{background:#dcfce7;color:#166534}.dov{background:#fee2e2;color:#991b1b}.dmt{color:#71717a}
+.bar-bg{margin:0 11px 7px;height:4px;background:#e4e4e7;border-radius:4px;overflow:hidden}
+.bar-f{height:100%;border-radius:4px;transition:width .4s}
+.prog{margin-bottom:9px}
+.ph{display:flex;justify-content:space-between;margin-bottom:3px}
+.dc{background:#fff;border-radius:10px;margin-bottom:9px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.06)}
+.dh{display:flex;align-items:center;gap:7px;padding:9px 11px;cursor:pointer;background:#f9fafb}
+.dbg {font-size:10px;font-weight:600;color:#fff;padding:2px 8px;border-radius:20px;flex-shrink:0}
+.dtit{flex:1;font-size:12px;font-weight:600;color:#18181b;line-height:1.3}
+.dm2{font-size:10px;color:#71717a}
+.di{border-top:.5px solid #e4e4e7}
+.tli{display:grid;grid-template-columns:42px 1fr;border-bottom:.5px solid #f4f4f5;position:relative}
+.tli:last-child{border-bottom:none}
+.tlt{padding:9px 5px 9px 10px;font-size:10px;font-weight:600;color:#71717a;line-height:1.3}
+.tlb{padding:9px 11px 9px 0}
+.tln{font-size:12px;line-height:1.4;margin-bottom:3px;color:#18181b}
+.cat{display:inline-block;font-size:10px;padding:1px 6px;border-radius:7px;margin-bottom:4px}
+.pc{background:#f8fafc;border:.5px solid #e2e8f0;border-radius:7px;padding:5px 8px;margin:3px 0 5px}
+.pn{font-size:11px;font-weight:600;color:#1e293b;margin-bottom:1px}
+.pm{font-size:10px;color:#64748b;margin-bottom:4px}
+.mlink{display:inline-flex;align-items:center;gap:3px;font-size:10px;color:#fff;background:#1a56db;border-radius:5px;padding:3px 8px;text-decoration:none;font-weight:500}
+.amo{display:flex;flex-direction:column;gap:4px;margin-top:5px;background:#f8fafc;padding:6px;border-radius:6px}
+.amo-row{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.pl{font-size:10px;color:#71717a}
+.ai{width:82px;padding:4px 7px;border:1.5px solid #e4e4e7;border-radius:7px;font-size:13px;text-align:right;background:#fef9c3;color:#18181b;font-family:inherit;transition:.15s}
+.ai:focus{outline:none;border-color:#d97706;background:#fefce8}
+.ai.hv{background:#f0fdf4;border-color:#16a34a;color:#16a34a}
+.ni{width:100%;padding:5px 7px;border:1px dashed #cbd5e1;border-radius:5px;font-size:11px;background:#fff;color:#475569;box-sizing:border-box}
+.ni:focus{outline:none;border-color:#94a3b8;background:#f8fafc}
+.df{font-size:10px;font-weight:600;padding:2px 5px;border-radius:5px;min-width:36px;text-align:center}
+.ib{background:#eff6ff;border:.5px solid #93c5fd;border-radius:9px;padding:9px 11px;margin-bottom:9px;margin-top:4px;font-size:11px;color:#1e40af;line-height:1.55}
+.wb{background:#fef2f2;border:.5px solid #fca5a5;border-radius:9px;padding:9px 11px;margin-bottom:9px;margin-top:4px;font-size:11px;color:#7f1d1d;line-height:1.55}
+.ib strong,.wb strong{font-weight:600;display:block;margin-bottom:3px;font-size:12px}
+.mrtbox{background:#fff;border-radius:9px;padding:9px 11px;box-shadow:0 1px 5px rgba(0,0,0,.06);margin-bottom:9px}
+.mrt-l{display:flex;align-items:center;overflow-x:auto;padding:7px 0 3px;scrollbar-width:none}
+.mrt-l::-webkit-scrollbar{display:none}
+.mrt-s{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.mrt-d{width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px currentColor}
+.mrt-d.key{width:16px;height:16px}
+.mrt-n{font-size:9px;color:#18181b;margin-top:3px;text-align:center;max-width:48px;line-height:1.2}
+.mrt-c{height:4px;flex:1;min-width:16px}
+.tip{background:#fff;border:.5px solid #e4e4e7;border-radius:9px;padding:9px 11px;margin-bottom:7px;display:flex;gap:8px}
+.tip-i{font-size:17px;flex-shrink:0}
+.tip-t{font-size:11px;font-weight:600;color:#18181b;margin-bottom:2px}
+.tip-p{font-size:10px;color:#71717a;line-height:1.5}
+.toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);color:#fff;padding:7px 16px;border-radius:18px;font-size:11px;opacity:0;transition:.3s;pointer-events:none;z-index:400;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.toast.on{opacity:1}
+.share-panel{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;display:none;align-items:flex-end;justify-content:center}
+.share-panel.on{display:flex}
+.share-box{background:#fff;border-radius:16px 16px 0 0;padding:20px;width:100%;max-width:480px;max-height:85vh;overflow-y:auto}
+.share-box h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.share-box p{font-size:12px;color:#71717a;margin-bottom:14px;line-height:1.5}
+.share-url{width:100%;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:8px;font-size:11px;font-family:monospace;color:#18181b;background:#f9fafb;margin-bottom:10px;word-break:break-all;white-space:pre-wrap}
+.sbtn-row{display:flex;gap:8px;margin-top:10px}
+.sbtn{flex:1;padding:10px;border-radius:9px;border:.5px solid #e4e4e7;background:#f9fafb;color:#18181b;font-size:12px;font-weight:500;cursor:pointer;transition:.15s;text-align:center}
+.sbtn:active{background:#e4e4e7}
+.sbtn.primary{background:#002060;color:#fff;border-color:#002060}
+.f-group{margin-bottom:10px}
+.f-group label{display:block;font-size:11px;font-weight:600;color:#4b5563;margin-bottom:3px}
+.f-input{width:100%;padding:8px 10px;border:1px solid #d1d5db;border-radius:6px;font-size:13px}
+.del-btn{position:absolute;right:8px;top:8px;background:none;border:none;color:#ef4444;font-size:14px;cursor:pointer}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="ht">
+    <span>🇹🇼 แผนเที่ยวไต้หวัน 2026</span>
+    <div class="hdr-btns">
+      <button class="share-btn" onclick="openEditor()">✏️ แก้ไขแผน</button>
+      <button class="share-btn" onclick="openShare()">📤 แชร์</button>
+    </div>
+  </div>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-t="db">📊 สรุป</button>
+    <button class="tab" data-t="d0">วัน 0</button>
+    <button class="tab" data-t="d1">วัน 1</button>
+    <button class="tab" data-t="d2">วัน 2 🌊</button>
+    <button class="tab" data-t="d3">วัน 3</button>
+    <button class="tab" data-t="d4">วัน 4 ⭐</button>
+    <button class="tab" data-t="d5">วัน 5 ⚠️</button>
+    <button class="tab" data-t="mrt">🗺 MRT</button>
+  </div>
+</header>
+
+<div class="wrap">
+<div id="scr-db" class="scr on">
+  <div class="kg">
+    <div class="kc"><div class="kl">งบวางแผนรวม</div><div class="kv" id="kp" style="color:#002060">฿0</div><div class="ks">ทั้งทริป 6 วัน</div></div>
+    <div class="kc"><div class="kl">จ่ายจริง (รวม)</div><div class="kv" id="ka" style="color:#16a34a">฿0</div><div class="ks" id="kas">ยังไม่ได้กรอก</div></div>
+    <div class="kc"><div class="kl">ส่วนต่าง</div><div class="kv" id="kd" style="color:#d97706">–</div><div class="ks">จ่ายจริง−แผน</div></div>
+    <div class="kc"><div class="kl">กรอกแล้ว</div><div class="kv" id="kn" style="color:#002060">0/0</div><div class="ks">รายการ</div></div>
+  </div>
+  <div class="sec">งบแยกหมวด</div>
+  <div class="bcard" id="btbl"></div>
+  <div class="sec">ความคืบหน้าแต่ละวัน</div>
+  <div id="dprog"></div>
+</div>
+
+<div id="scr-d0" class="scr"><div class="wb"><strong>📅 วัน 0 — 29 พ.ค. ออกเดินทาง</strong>ชลบุรี → ดอนเมือง | บินออก 06:15 น. วันที่ 30 พ.ค.</div><div id="items-d0"></div></div>
+<div id="scr-d1" class="scr"><div class="ib"><strong>✈ วัน 1 — 30 พ.ค. บินถึงไทเป</strong>🏨 Single Inn — MRT <strong>Fuzhong (府中站)</strong> Exit 2 เดิน ~3 นาที | Banqiao<br>💡 Nanya NM ห่างโรงแรม 700 ม. เดินได้!</div><div id="items-d1"></div></div>
+<div id="scr-d2" class="scr"><div class="ib"><strong>🌊 วัน 2 — 31 พ.ค. Taipei 101 + Heping + จิ่วเฟิ่น + Ximending</strong>Zhengbin → เดิน 20 นาที → Heping Island GeoPark (★4.4)<br>🌃 คืน: Ximending — MRT Blue สถานี <strong>Ximen (西門)</strong></div><div id="items-d2"></div></div>
+<div id="scr-d3" class="scr"><div class="ib"><strong>🚄 วัน 3 — 1 มิ.ย. ไทเป → เกาสง</strong>🚄 HSR จาก <strong>Banqiao HSR Station</strong> (ติดโรงแรม!) → Zuoying ~1.5 ชม.<br>🏨 Guide Hotel — MRT: Formosa Boulevard (美麗島)</div><div id="items-d3"></div></div>
+<div id="scr-d4" class="scr"><div class="ib"><strong>🛵 วัน 4 — 2 มิ.ย. E-Bike Day ⭐</strong>ปั่น: Zhongxing → Lotus Pond → Pier-2 → Cijin<br>🚄 บ่าย HSR กลับไทเป → Twin Star Inn ฿700</div><div id="items-d4"></div></div>
+<div id="scr-d5" class="scr"><div class="wb"><strong>⚠️ วัน 5 — 3 มิ.ย. บินกลับ TPE → DMK</strong>✈ บินออก ~14:00–16:00 น. | Airport MRT: Taipei Main → TPE T2 ~35 นาที<br>⏰ ออกโรงแรมอย่างช้า 11:30 น. ถึงก่อน 13:30 น.!</div><div id="items-d5"></div></div>
+
+<div id="scr-mrt" class="scr">
+  <div class="sec" style="margin-top:4px">Blue Line — สายหลัก (โรงแรม Fuzhong ↔ ใจกลาง)</div>
+  <div class="mrtbox"><div style="font-size:10px;color:#71717a;margin-bottom:5px">← เลื่อนดูทั้งสาย →</div><div class="mrt-l">
+    <div class="mrt-s"><div class="mrt-d key" style="color:#1a90d0;background:#1a90d0"></div><div class="mrt-n" style="color:#1F4E79;font-weight:600">Taipei Main</div></div>
+    <div class="mrt-c" style="background:#1a90d0"></div>
+    <div class="mrt-s"><div class="mrt-d" style="color:#1a90d0;background:#1a90d0"></div><div class="mrt-n">Ximen 🌃NM</div></div>
+    <div class="mrt-c" style="background:#1a90d0"></div>
+    <div class="mrt-s"><div class="mrt-d" style="color:#1a90d0;background:#1a90d0"></div><div class="mrt-n">Longshan Temple 🛕</div></div>
+    <div class="mrt-c" style="background:#1a90d0"></div>
+    <div class="mrt-s"><div class="mrt-d" style="color:#1a90d0;background:#1a90d0"></div><div class="mrt-n">Banqiao 🚄HSR</div></div>
+    <div class="mrt-c" style="background:#1a90d0"></div>
+    <div class="mrt-s"><div class="mrt-d key" style="color:#002060;background:#002060"></div><div class="mrt-n" style="color:#002060;font-weight:600">Fuzhong 府中 🏨</div></div>
+  </div></div>
+  <div class="sec">Red Line — ไทเป</div>
+  <div class="mrtbox"><div class="mrt-l">
+    <div class="mrt-s"><div class="mrt-d" style="color:#e11d48;background:#e11d48"></div><div class="mrt-n">Zhongshan Ningxia🌙</div></div>
+    <div class="mrt-c" style="background:#e11d48"></div>
+    <div class="mrt-s"><div class="mrt-d key" style="color:#e11d48;background:#e11d48"></div><div class="mrt-n" style="font-weight:600">Taipei Main 乘換</div></div>
+    <div class="mrt-c" style="background:#e11d48"></div>
+    <div class="mrt-s"><div class="mrt-d" style="color:#e11d48;background:#e11d48"></div><div class="mrt-n">CKS Memorial</div></div>
+    <div class="mrt-c" style="background:#e11d48"></div>
+    <div class="mrt-s"><div class="mrt-d key" style="color:#e11d48;background:#e11d48"></div><div class="mrt-n" style="font-weight:600">Taipei 101 🏙</div></div>
+  </div></div>
+  <div class="sec">Airport MRT + เกาสง Red Line</div>
+  <div class="mrtbox">
+    <div style="font-size:10px;color:#71717a;margin-bottom:4px">Airport MRT สีม่วง ~160 TWD ~35 นาที</div>
+    <div class="mrt-l">
+      <div class="mrt-s"><div class="mrt-d key" style="color:#7c3aed;background:#7c3aed"></div><div class="mrt-n" style="color:#7c3aed;font-weight:600">TPE T2 สนามบิน</div></div>
+      <div class="mrt-c" style="background:#7c3aed;min-width:40px"></div>
+      <div class="mrt-s"><div class="mrt-d key" style="color:#7c3aed;background:#7c3aed"></div><div class="mrt-n" style="color:#7c3aed;font-weight:600">Taipei Main ~35น.</div></div>
+    </div>
+    <div style="font-size:10px;color:#71717a;margin:7px 0 4px">เกาสง Red Line</div>
+    <div class="mrt-l">
+      <div class="mrt-s"><div class="mrt-d key" style="color:#e11d48;background:#e11d48"></div><div class="mrt-n" style="font-weight:600">Zuoying 左營 HSR🚄</div></div>
+      <div class="mrt-c" style="background:#e11d48"></div>
+      <div class="mrt-s"><div class="mrt-d key" style="color:#e11d48;background:#e11d48"></div><div class="mrt-n" style="font-weight:600">Formosa Blvd 🏨Guide</div></div>
+      <div class="mrt-c" style="background:#e11d48"></div>
+      <div class="mrt-s"><div class="mrt-d key" style="color:#e11d48;background:#e11d48"></div><div class="mrt-n" style="font-weight:600">KHH Airport ✈</div></div>
+    </div>
+  </div>
+  <div class="sec">ทริกและของฝาก</div>
+  <div class="tip"><div class="tip-i">🏨</div><div><div class="tip-t">โรงแรมอยู่ที่ Fuzhong (Banqiao)</div><div class="tip-p">MRT Fuzhong Exit 2 | HSR ออก Banqiao Station ติดโรงแรม ประหยัดกว่า Taipei Main!</div></div></div>
+  <div class="tip"><div class="tip-i">🌊</div><div><div class="tip-t">Zhengbin → Heping Island GeoPark</div><div class="tip-p">เดิน ~20 นาที หรือ บัส 101/102 | ค่าเข้า ~120 TWD | เปิด 08:00–19:00 | ★4.4 (25K รีวิว)</div></div></div>
+  <div class="tip"><div class="tip-i"> Pineapple 🍍</div><div><div class="tip-t">ของฝากต้องซื้อ</div><div class="tip-p">Chia Te พายสับปะรด · นูกัตตังเม · ขนมเปี๊ยะเผือก · ชาอู่หลง · มาสก์ Timeless Truth</div></div></div>
+  <div class="tip"><div class="tip-i">🚄</div><div><div class="tip-t">HSR จอง thsr.com.tw</div><div class="tip-p">Banqiao HS → Zuoying HS ~1.5 ชม. ~700 TWD | จองล่วงหน้าได้ส่วนลด</div></div></div>
+  <div class="tip"><div class="tip-i">🌧</div><div><div class="tip-t">มิถุนายน = ฤดูฝน</div><div class="tip-p">พกร่มพับ + เสื้อกันฝน + ครีมกันแดด SPF50+ ทุกวัน อากาศ ~30°C</div></div></div>
+</div>
+</div>
+
+<div class="share-panel" id="share-panel" onclick="closeModal(event, 'share-panel')">
+  <div class="share-box">
+    <h3>📤 แชร์แผนและค่าใช้จ่าย</h3>
+    <p>ลิงก์นี้จะฝังข้อมูลทริป ยอดเงินจ่ายจริง และโน้ตทั้งหมดไว้ ส่งต่อให้เพื่อนเปิดใช้งานต่อได้ทันที!</p>
+    <div class="share-url" id="share-url">กำลังสร้างลิงก์...</div>
+    <div class="sbtn-row">
+      <button class="sbtn" onclick="document.getElementById('share-panel').classList.remove('on')">ปิด</button>
+      <button class="sbtn primary" onclick="copyShareUrl()">📋 คัดลอกลิงก์</button>
+    </div>
+  </div>
+</div>
+
+<div class="share-panel" id="editor-panel" onclick="closeModal(event, 'editor-panel')">
+  <div class="share-box">
+    <h3 id="editor-title">✏️ จัดการแผนการเดินทาง</h3>
+    <p style="margin-bottom:8px">เพิ่มหรือแก้ไขรายการแผนงานในทริปนี้ได้ตามต้องการ</p>
+    
+    <div class="f-group">
+      <label>เลือกวัน</label>
+      <select id="f-day" class="f-input" onchange="renderEditorItems()">
+        <option value="d0">วัน 0 (29 พ.ค.)</option>
+        <option value="d1">วัน 1 (30 พ.ค.)</option>
+        <option value="d2">วัน 2 (31 พ.ค.)</option>
+        <option value="d3">วัน 3 (1 มิ.ย.)</option>
+        <option value="d4">วัน 4 (2 มิ.ย.)</option>
+        <option value="d5">วัน 5 (3 มิ.ย.)</option>
+      </select>
+    </div>
+    
+    <div style="border:1px solid #e4e4e7; border-radius:8px; padding:10px; max-height:40vh; overflow-y:auto; background:#f8fafc" id="editor-items-list">
+      </div>
+    
+    <button class="sbtn primary" style="width:100%; margin-top:10px" onclick="addNewItemRow()">➕ เพิ่มรายการใหม่ในวันนี้</button>
+    
+    <div class="sbtn-row">
+      <button class="sbtn" onclick="document.getElementById('editor-panel').classList.remove('on')">ยกเลิก</button>
+      <button class="sbtn primary" onclick="saveEditorChanges()">💾 บันทึกการเปลี่ยนแปลง</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// --- MASTER PLACES DATA (ORIGINAL) ---
+const PL={
+  longshan:{n:'วัดหลงซาน (Longshan Temple)',r:'★4.5 (48K)',h:'06:00–22:00',lat:25.03731,lng:121.49987},
+  singeinn:{n:'Single Inn Taipei',r:'★4.6 (4.5K)',h:'24 ชม.',lat:25.01045,lng:121.45897},
+  nanya:{n:'Nanya Night Market (Banqiao)',r:'★4.2 (32K)',h:'17:00–00:00',lat:25.00572,lng:121.45547},
+  taipei101:{n:'Taipei 101 Observatory',r:'★4.5 (38K)',h:'10:00–21:00',lat:25.03368,lng:121.56489},
+  cks:{n:'CKS Memorial Hall',r:'★4.5 (81K)',h:'09:00–18:00',lat:25.03374,lng:121.52200},
+  zhengbin:{n:'Zhengbin Port Color Houses',r:'★4.3 (10K)',h:'ตลอด 24 ชม.',lat:25.15242,lng:121.76911},
+  heping:{n:'Heping Island GeoPark',r:'★4.4 (25K)',h:'08:00–19:00 | ค่าเข้า ~120 TWD',lat:25.16174,lng:121.76447},
+  jiufen:{n:'Jiufen Old Street',r:'★4.3 (107K)',h:'10:00–20:00',lat:25.10981,lng:121.84521},
+  ningxia:{n:'Ningxia Night Market',r:'★4.2 (60K)',h:'17:00–23:30',lat:25.05668,lng:121.51536},
+  ximending:{n:'Ximending Night Market',r:'★4.4 (10K)',h:'18:00–23:00',lat:25.04283,lng:121.50774},
+  banqHSR:{n:'Banqiao HSR / Train Station',r:'★4.4 (10K)',h:'24 ชม.',lat:25.01405,lng:121.46375},
+  guide:{n:'Guide Hotel Kaohsiung ShinKuChan',r:'★4.5 (895)',h:'24 ชม.',lat:22.62471,lng:120.30531},
+  lotus:{n:'Dragon & Tiger Pagodas (Lotus Pond)',r:'★4.3 (20K)',h:'08:00–17:30',lat:22.68050,lng:120.29248},
+  liuhe:{n:'Liuhe Night Market',r:'★3.8 (40K)',h:'16:30–02:00',lat:22.63208,lng:120.29915},
+  zhongxing:{n:'Zhongxing Pagoda (中興塔)',r:'★4.2 (1.1K)',h:'06:00–17:30',lat:22.66675,lng:120.34282},
+  pier2:{n:'Pier-2 Art Center',r:'★4.4 (71K)',h:'10:00–18:00 (ศ-อา ถึง 20:00)',lat:22.61998,lng:120.28153},
+  cijin:{n:'Cijin Ferry (ท่าเรือ Gushan)',r:'★4.1 (1.4K)',h:'ทุกวัน',lat:22.61407,lng:120.26967},
+  chiaTe:{n:'Chia Te Bakery พายสับปะรด',r:'★4.2 (15K)',h:'08:30–20:30',lat:25.05124,lng:121.56144},
+  foguang:{n:'Fo Guang Shan Buddha Museum',r:'★4.6 (39K)',h:'09:00–18:00 (ปิดอังคาร!)',lat:22.75495,lng:120.44739},
+  tpe:{n:'สนามบินเถาหยวน Terminal 2 (TPE)',r:'★4.3 (2.4K)',h:'24 ชม.',lat:25.07679,lng:121.23157}
+};
+
+// --- CATEGORIES WITH INTERNET & INSURANCE ---
+const CM={
+  T:{l:'✈ตั๋ว',bg:'#fef3c7',cl:'#92400e'},
+  H:{l:'🏨ที่พัก',bg:'#dcfce7',cl:'#14532d'},
+  F:{l:'🍜อาหาร',bg:'#ffedd5',cl:'#7c2d12'},
+  TR:{l:'🚆เดินทาง',bg:'#dbeafe',cl:'#1e3a8a'},
+  S:{l:'🛍ของฝาก',bg:'#fce7f3',cl:'#831843'},
+  A:{l:'🎟กิจกรรม',bg:'#ede9fe',cl:'#4c1d95'},
+  W:{l:'📶เน็ต/ซิม',bg:'#e0f2fe',cl:'#0369a1'},
+  IN:{l:'🛡️ประกัน',bg:'#e2f8ff',cl:'#085c75'}
+};
+const CG=[
+  {k:'T',l:'✈ ตั๋วเครื่องบิน',c:'#d97706'},
+  {k:'H',l:'🏨 ที่พัก',c:'#16a34a'},
+  {k:'F',l:'🍜 อาหาร',c:'#dc2626'},
+  {k:'TR',l:'🚆 เดินทาง',c:'#2563eb'},
+  {k:'S',l:'🛍 ของฝาก',c:'#db2777'},
+  {k:'A',l:'🎟 กิจกรรม',c:'#7c3aed'},
+  {k:'W',l:'📶 เน็ต/ซิม',c:'#0284c7'},
+  {k:'IN',l:'🛡️ ประกัน',c:'#0891b2'}
+];
+
+// --- COMPLETE ORIGINAL TRIPS DATA ---
+let DEFAULT_DAYS=[
+  {id:'d0',lbl:'วัน 0',date:'29 พ.ค.',title:'ออกเดินทาง',col:'#64748b',items:[
+    {id:'i0_1',t:'19:00',n:'รถตู้ ชลบุรี → หมอชิต',c:'TR',p:140,pl:null},
+    {id:'i0_2',t:'21:30',n:'รถไฟฟ้า/แท็กซี่ → สนามบินดอนเมือง',c:'TR',p:50,pl:null},
+    {id:'i0_3',t:'22:30',n:'ทานข้าว + นอนรอขึ้นเครื่อง',c:'F',p:200,pl:null},
+  ]},
+  {id:'d1',lbl:'วัน 1',date:'30 พ.ค.',title:'✈ บินถึงไทเป + วัดหลงซาน',col:'#1F4E79',items:[
+    {id:'i1_1',t:'06:15',n:'✈ บิน DMK → TPE (ตั๋วรวม 2 เที่ยว)',c:'T',p:4000,pl:null},
+    {id:'i1_2',t:'11:10',n:'ถึงสนามบินเถาหยวน (TPE) | ทานข้าวในสนามบิน',c:'F',p:200,pl:'tpe'},
+    {id:'i1_3',t:'12:00',n:'Airport MRT Express → Taipei Main (~160 TWD ~35 นาที)',c:'TR',p:200,pl:'tpe'},
+    {id:'i1_4',t:'13:00',n:'MRT Blue → Longshan Temple (2 สถานีจาก Taipei Main)',c:'TR',p:30,pl:null},
+    {id:'i1_5',t:'13:30',n:"🛕 วัดหลงซาน + Wang's Broth ขาหมู",c:'F',p:200,pl:'longshan'},
+    {id:'i1_6',t:'16:00',n:'MRT Blue → Fuzhong (4 สถานี ~10 นาที จากวัด)',c:'TR',p:30,pl:null},
+    {id:'i1_7',t:'16:30',n:'🏨 เช็คอิน Single Inn Taipei (MRT Fuzhong Exit 2 เดิน 3 นาที)',c:'H',p:1675,pl:'singeinn'},
+    {id:'i1_8',t:'18:00',n:'🌙 Nanya Night Market (เดินจากโรงแรม 700 ม.)',c:'F',p:250,pl:'nanya'},
+  ]},
+  {id:'d2',lbl:'วัน 2',date:'31 พ.ค.',title:'🌊 Taipei 101 + Heping + จิ่วเฟิ่น + Ximending',col:'#0F172A',items:[
+    {id:'i2_1',t:'07:00',n:'อาหารเช้าในโรงแรม / ร้านแถว Fuzhong',c:'F',p:100,pl:null},
+    {id:'i2_2',t:'07:30',n:'MRT: Fuzhong → Taipei Main → Red → Taipei 101 (~25 นาที)',c:'TR',p:50,pl:null},
+    {id:'i2_3',t:'08:30',n:'🏙 Taipei 101 ชั้น 89 (ลิฟต์เร็ว 60 km/h จอง ~600 TWD)',c:'A',p:700,pl:'taipei101'},
+    {id:'i2_4',t:'10:30',n:'MRT Red → Taipei Main → TRA ไปจีหลง (Keelung) ~40 นาที',c:'TR',p:80,pl:null},
+    {id:'i2_5',t:'11:30',n:'🎨 Zhengbin Port Color Houses (正濱漁港彩色屋)\nบัส 791 จาก Keelung Station | ถ่ายรูปสวยมาก',c:'A',p:0,pl:'zhengbin'},
+    {id:'i2_6',t:'12:30',n:'🌊 Heping Island GeoPark (和平島地質公園)\nเดินจาก Zhengbin ~20 นาที หรือ บัส 101/102\nหินธรณีวิทยาริมทะเล วิวสวย ค่าเข้า ~120 TWD',c:'A',p:140,pl:'heping'},
+    {id:'i2_7',t:'14:30',n:'บัส 791 → Keelung Station → ต่อบัส 788 ไปจิ่วเฟิ่น',c:'TR',p:100,pl:null},
+    {id:'i2_8',t:'15:30',n:'🏮 จิ่วเฟิ่น Old Street + A-Mei Tea House\nโคมแดงจุดช่วง 17:00+',c:'F',p:400,pl:'jiufen'},
+    {id:'i2_9',t:'19:00',n:'บัส 1062 กลับ Taipei Main (~1 ชม.)',c:'TR',p:80,pl:null},
+    {id:'i2_10',t:'20:00',n:'🌃 Ximending Night Market\nMRT Blue: Ximen (1 สถานีจาก Taipei Main)\nกิน: ไก่ทอด, ชานม, เสี่ยวหลงเปา + ช้อปปิ้ง',c:'F',p:400,pl:'ximending'},
+    {id:'i2_11',t:'22:00',n:'MRT Blue: Ximen → Taipei Main → Fuzhong กลับโรงแรม',c:'TR',p:30,pl:null},
+  ]},
+  {id:'d3',lbl:'วัน 3',date:'1 มิ.ย.',title:'🚄 ไทเป → เกาสง',col:'#0f766e',items:[
+    {id:'i3_1',t:'07:00',n:'อาหารเช้าในโรงแรม / แถว Fuzhong',c:'F',p:80,pl:null},
+    {id:'i3_2',t:'08:30',n:'🏛 CKS Memorial Hall (เปลี่ยนเวรยาม 10:00 เข้าฟรี)',c:'A',p:0,pl:'cks'},
+    {id:'i3_3',t:'10:30',n:'🛍 เช็คเอาต์ + ซื้อของฝากแถว Ximen',c:'S',p:500,pl:null},
+    {id:'i3_4',t:'12:00',n:'🚄 HSR: Banqiao HS → Zuoying HS (~800 บาท ~1.5 ชม.)',c:'TR',p:800,pl:'banqHSR'},
+    {id:'i3_5',t:'13:30',n:'MRT Red: Zuoying → Formosa Boulevard',c:'TR',p:30,pl:null},
+    {id:'i3_6',t:'14:00',n:'🏨 เช็คอิน Guide Hotel (MRT: Formosa Boulevard)',c:'H',p:1200,pl:'guide'},
+    {id:'i3_7',t:'15:00',n:'🪷 Lotus Pond + Dragon & Tiger Pagodas (MRT: Zuoying เดิน 20 นาที)',c:'A',p:100,pl:'lotus'},
+    {id:'i3_8',t:'18:00',n:'🌙 Liuhe Night Market (MRT: Formosa Blvd เดิน 5 นาที)',c:'F',p:300,pl:'liuhe'},
+  ]},
+  {id:'d4',lbl:'วัน 4 ⭐',date:'2 มิ.ย.',title:'🛵 E-Bike Day!',col:'#0284c7',items:[
+    {id:'i4_1',t:'07:00',n:'อาหารเช้าท้องถิ่น ข้าวต้มทะเล',c:'F',p:100,pl:null},
+    {id:'i4_2',t:'08:00',n:'🛵 เช่า E-bike ใกล้โรงแรม (~250 บาท/วัน เตรียม Passport)',c:'TR',p:250,pl:null},
+    {id:'i4_3',t:'08:30',n:'⭐ Zhongxing Pagoda ปั่น ~5 กม. ริมแม่น้ำ',c:'A',p:0,pl:'zhongxing'},
+    {id:'i4_4',t:'09:30',n:'🪷 Lotus Pond รอบ 2 + Confucius Temple',c:'A',p:0,pl:'lotus'},
+    {id:'i4_5',t:'12:00',n:'อาหารกลางวัน Mi Tai Mu ย่าน Lotus Pond',c:'F',p:150,pl:null},
+    {id:'i4_6',t:'13:00',n:'🎨 Pier-2 Art Center (Circle Line: Pier-2/Kaisyuan)',c:'A',p:0,pl:'pier2'},
+    {id:'i4_7',t:'15:30',n:'คืน E-bike + MRT → Zuoying HSR',c:'TR',p:50,pl:null},
+    {id:'i4_8',t:'16:00',n:'🚄 HSR กลับ: Zuoying → Banqiao (~800 บาท)',c:'TR',p:800,pl:null},
+    {id:'i4_9',t:'17:30',n:'⛴ เรือเฟอร์รี่ Cijin Island + อาหารทะเลสด',c:'F',p:450,pl:'cijin'},
+    {id:'i4_10',t:'20:30',n:'🏨 เช็คอิน Twin Star Inn ไทเป (฿700)',c:'H',p:700,pl:null},
+  ]},
+  {id:'d5',lbl:'วัน 5 ⚠️',date:'3 มิ.ย.',title:'✈ บินกลับ TPE → DMK',col:'#dc2626',items:[
+    {id:'i5_1',t:'07:30',n:'อาหารเช้าใกล้ Twin Star Inn',c:'F',p:100,pl:null},
+    {id:'i5_2',t:'08:00',n:'🛕 Fo Guang Shan Buddha Museum (ออกก่อน 10:00 — ปิดอังคาร!)',c:'A',p:100,pl:'foguang'},
+    {id:'i5_3',t:'11:00',n:'🛍 ChiaTe Bakery พายสับปะรด (MRT Green: Nanjing Sanmin)',c:'S',p:500,pl:'chiaTe'},
+    {id:'i5_4',t:'11:30',n:'Airport MRT: Taipei Main → TPE T2 (~160 TWD ~35 นาที)',c:'TR',p:185,pl:'tpe'},
+    {id:'i5_5',t:'12:15',n:'✅ เช็คอินสนามบิน + Duty Free (Chia Te มีขายในสนามบิน)',c:'S',p:500,pl:'tpe'},
+    {id:'i5_6',t:'14:00+',n:'✈ บิน TPE → DMK (ตรวจสอบเวลาจริงก่อนเดินทาง)',c:'T',p:0,pl:null},
+    {id:'i5_7',t:'17:30+',n:'🛬 ถึงสนามบินดอนเมือง → กลับชลบุรี',c:'TR',p:200,pl:null},
+  ]},
+];
+
+const LOCAL_PLAN_KEY='tw26_editable_plan_v4';
+const LOCAL_ACTUAL_KEY='tw26_editable_actuals_v4';
+
+let DAYS=JSON.parse(localStorage.getItem(LOCAL_PLAN_KEY)) || DEFAULT_DAYS;
+let A=JSON.parse(localStorage.getItem(LOCAL_ACTUAL_KEY)) || {};
+
+try {
+  const h=location.hash.slice(1);
+  if(h && h.startsWith('data=')){
+    const decoded=JSON.parse(atob(decodeURIComponent(h.slice(5))));
+    if(decoded.plan) { DAYS=decoded.plan; localStorage.setItem(LOCAL_PLAN_KEY, JSON.stringify(DAYS)); }
+    if(decoded.act) { A=decoded.act; localStorage.setItem(LOCAL_ACTUAL_KEY, JSON.stringify(A)); }
+  }
+} catch(e) { console.log("Hash read error", e); }
+
+function saveAllData(){
+  localStorage.setItem(LOCAL_PLAN_KEY, JSON.stringify(DAYS));
+  localStorage.setItem(LOCAL_ACTUAL_KEY, JSON.stringify(A));
+}
+
+function buildShareUrl(){
+  const packed=btoa(JSON.stringify({plan: DAYS, act: A}));
+  const base=location.href.split('#')[0].split('?')[0];
+  return base+'#data='+encodeURIComponent(packed);
+}
+
+function openShare(){
+  document.getElementById('share-url').textContent=buildShareUrl();
+  document.getElementById('share-panel').classList.add('on');
+}
+
+function closeModal(e, id){
+  if(!e || e.target===document.getElementById(id))
+    document.getElementById(id).classList.remove('on');
+}
+
+function copyShareUrl(){
+  const url=document.getElementById('share-url').textContent;
+  navigator.clipboard.writeText(url).then(()=>{
+    showToast('คัดลอกลิงก์เรียบร้อย! 🎉','#002060');
+    document.getElementById('share-panel').classList.remove('on');
+  });
+}
+
+function showToast(msg,bg='#16a34a'){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.background=bg;t.classList.add('on');
+  setTimeout(()=>t.classList.remove('on'),2000);
+}
+
+function mlink(lat,lng){return`<a href="http://maps.google.com/?q=${lat},${lng}" target="_blank" class="mlink">📍 Maps</a>`;}
+function pc(k){
+  const p=PL[k]; if(!p)return '';
+  return `<div class="pc"><div class="pn">${p.n}</div><div class="pm">${p.r} · ${p.h}</div>${mlink(p.lat,p.lng)}</div>`;
+}
+
+function renderDayScreen(id){
+  const day=DAYS.find(d=>d.id===id); if(!day)return;
+  const el=document.getElementById('items-'+id); if(!el) return;
+  
+  let h=`<div class="dc" style="border-left:3px solid ${day.col}">
+    <div class="dh" onclick="tog('${day.id}')">
+      <div class="dbg" style="background:${day.col}">${day.lbl}</div>
+      <div><div class="dtit">${day.title}</div>
+      <div class="dm2">${day.date} · ฿${day.items.reduce((s,i)=>s+i.p,0).toLocaleString()} แผน</div></div>
+      <span id="ch-${day.id}" style="font-size:12px;color:#a1a1aa">▾</span>
+    </div><div class="di" id="di-${day.id}">`;
+    
+  if(day.items.length===0){
+    h+=`<div style="padding:15px; font-size:11px; color:#a1a1aa; text-align:center;">ไม่มีรายการกิจกรรม กด "แก้ไขแผน" เพื่อเพิ่มได้เลย</div>`;
+  }
+  
+  for(const it of day.items) {
+    const cat=CM[it.c]||{l:'',bg:'#f4f4f5',cl:'#555'};
+    const av=A[it.id], hv=av!==undefined&&av!=='';
+    const noteVal=A[it.id+'_n'] || '';
+    const diff=hv?Number(av)-it.p:null;
+    const dfh=diff!==null?`<span class="df ${diff<=0?'dok':'dov'}">${diff>0?'+':''}${diff.toLocaleString()}</span>`:'';
+    
+    h+=`<div class="tli"><div class="tlt">${it.t}</div><div class="tlb">
+      <div class="tln">${it.n.replace(/\\n/g,'<br>')}</div>
+      ${it.c?`<span class="cat" style="background:${cat.bg};color:${cat.cl}">${cat.l}</span>`:''}
+      ${it.pl?pc(it.pl):''}
+      
+      <div class="amo">
+        <div class="amo-row">
+          <span class="pl">แผน ฿${it.p.toLocaleString()}</span>
+          <div style="display:flex;align-items:center;gap:4px">
+            <input type="number" class="ai${hv?' hv':''}" placeholder="จ่ายจริง"
+              value="${hv?av:''}" inputmode="numeric" 
+              onchange="updActual('${it.id}',this.value)" onfocus="this.select()">
+            ${dfh}
+          </div>
+        </div>
+        <input type="text" class="ni" placeholder="✍️ ใส่บันทึกเพิ่มเติมที่นี่..." 
+          value="${noteVal}" onchange="updNote('${it.id}',this.value)">
+      </div>
+    </div></div>`;
+  }
+  h+='</div></div>'; el.innerHTML=h;
+}
+
+function tog(id){
+  const di=document.getElementById('di-'+id);
+  const ch=document.getElementById(`ch-${id}`);
+  if(!di) return;
+  const open=di.style.display!=='none';
+  di.style.display=open?'none':'block'; 
+  if(ch) ch.textContent=open?'▸':'▾';
+}
+
+function updActual(id, val){
+  const v=val.trim();
+  if(v===''){delete A[id];}else{A[id]=Number(v);}
+  saveAllData(); dash(); refreshActiveDays();
+  showToast('บันทึกยอดเงินสำเร็จ ✓','#16a34a');
+}
+
+function updNote(id, val){
+  const v=val.trim();
+  if(v===''){delete A[id+'_n'];}else{A[id+'_n']=v;}
+  saveAllData();
+  showToast('บันทึกโน้ตสำเร็จ ✓', '#0284c7');
+}
+
+function refreshActiveDays(){
+  DAYS.forEach(d=> {
+    const el=document.getElementById('items-'+d.id);
+    if(el && el.innerHTML!=='') renderDayScreen(d.id);
+  });
+}
+
+function dash(){
+  let tp=0,ta=0,fil=0,tot=0; const cp={},ca={};
+  DAYS.forEach(d=>d.items.forEach(it=>{
+    tot++; tp+=it.p; cp[it.c]=(cp[it.c]||0)+it.p;
+    if(A[it.id]!==undefined){fil++; ta+=Number(A[it.id]); ca[it.c]=(ca[it.c]||0)+Number(A[it.id])}
+  }));
+  const diff=ta-tp;
+  document.getElementById('kp').textContent='฿'+tp.toLocaleString();
+  document.getElementById('ka').textContent='฿'+ta.toLocaleString();
+  document.getElementById('kas').textContent=fil>0?`กรอกแล้ว ${fil} รายการ`:'ยังไม่ได้กรอก';
+  document.getElementById('kn').textContent=fil+'/'+tot;
+  const de=document.getElementById('kd');
+  de.style.color=fil===0?'#d97706':diff<=0?'#16a34a':'#dc2626';
+  de.textContent=fil===0?'–':`${diff>0?'+':''}฿${diff.toLocaleString()}`;
+  
+  let bh='';
+  CG.forEach(cg=>{
+    const p=cp[cg.k]||0, a=ca[cg.k], hA=a!==undefined, d=hA?a-p:null, pct=tp?Math.min(100,Math.round(p/tp*100)):0;
+    bh+=`<div class="brow"><div class="bic">${cg.l.split(' ')[0]}</div>
+      <div class="bnm">${cg.l.split(' ').slice(1).join(' ')}</div>
+      <div class="bpl">฿${p.toLocaleString()}</div>
+      <div class="bac" style="color:${hA?(d<=0?'#16a34a':'#dc2626'):'#71717a'}">${hA?'฿'+a.toLocaleString():'–'}</div>
+      <div class="bdf ${hA?(d<=0?'dok':'dov'):'dmt'}">${d!==null?(d>0?'+':'')+d.toLocaleString():'รอ'}</div>
+    </div><div class="bar-bg"><div class="bar-f" style="width:${pct}%;background:${cg.c}"></div></div>`;
+  });
+  
+  bh+=`<div class="brow tot"><div class="bic">Σ</div><div class="bnm">รวมทั้งหมด</div>
+    <div class="bpl" style="color:#fff">฿${tp.toLocaleString()}</div>
+    <div class="bac" style="color:${fil>0?(diff<=0?'#86efac':'#fca5a5'):'rgba(255,255,255,.4)'}">
+      ${fil>0?'฿'+ta.toLocaleString():'–'}</div>
+    <div class="bdf" style="color:#fff">${fil>0?(diff>0?'+':'')+diff.toLocaleString():'–'}</div>
+  </div>`;
+  document.getElementById('btbl').innerHTML=bh;
+  
+  let ph='';
+  DAYS.forEach(d=>{
+    const p=d.items.reduce((s,i)=>s+i.p,0);
+    const fi=d.items.filter(i=>A[i.id]!==undefined);
+    const a=fi.reduce((s,i)=>s+Number(A[i.id]),0);
+    const pct=d.items.length>0?Math.round(fi.length/d.items.length*100):0;
+    ph+=`<div class="prog"><div class="ph">
+      <span style="font-size:11px;font-weight:600;color:#18181b">${d.lbl} ${d.date}</span>
+      <span style="font-size:10px;color:#71717a">${fi.length>0?'฿'+a.toLocaleString()+' / ':''}฿${p.toLocaleString()} · ${pct}%</span>
+    </div><div class="bar-bg" style="margin:0"><div class="bar-f" style="width:${pct}%;background:${d.col}"></div></div></div>`;
+  });
+  document.getElementById('dprog').innerHTML=ph;
+}
+
+// --- WEB EDITOR ENGINE ---
+let tempItems=[];
+
+function openEditor(){
+  document.getElementById('editor-panel').classList.add('on');
+  renderEditorItems();
+}
+
+function renderEditorItems(){
+  const dayId=document.getElementById('f-day').value;
+  const day=DAYS.find(d=>d.id===dayId);
+  tempItems=day?JSON.parse(JSON.stringify(day.items)):[];
+  buildEditorListHTML();
+}
+
+function buildEditorListHTML(){
+  const box=document.getElementById('editor-items-list');
+  let h='';
+  tempItems.forEach((it, idx)=>{
+    h+=`<div style="background:#fff; border:1px solid #e4e4e7; padding:8px; border-radius:6px; margin-bottom:8px; position:relative;">
+      <button class="del-btn" onclick="deleteEditorItem(${idx})">🗑️</button>
+      <div style="display:grid; grid-template-columns: 55px 1fr; gap:6px; margin-bottom:4px;">
+        <input type="text" class="f-input" style="padding:4px;" placeholder="เวลา" value="${it.t}">
+        <input type="text" class="f-input" style="padding:4px;" placeholder="ชื่อสถานที่ / กิจกรรม" value="${it.n}">
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">
+        <select class="f-input" style="padding:4px; font-size:11px;">
+          ${CG.map(c=>`<option value="${c.k}" ${it.c===c.k?'selected':''}>${c.l}</option>`).join('')}
+        </select>
+        <input type="number" class="f-input" style="padding:4px; text-align:right;" placeholder="งบแผน (บาท)" value="${it.p}">
+      </div>
+    </div>`;
+  });
+  if(tempItems.length===0) h='<div style="text-align:center; color:#71717a; font-size:11px; padding:10px;">ไม่มีรายการในวันนี้</div>';
+  box.innerHTML=h;
+  
+  const rows=box.querySelectorAll('div[style*="background:#fff"]');
+  rows.forEach((r,i)=>{
+    const inputs=r.querySelectorAll('input, select');
+    inputs[0].onchange=(e)=>tempItems[i].t=e.target.value;
+    inputs[1].onchange=(e)=>tempItems[i].n=e.target.value;
+    inputs[2].onchange=(e)=>tempItems[i].c=e.target.value;
+    inputs[3].onchange=(e)=>tempItems[i].p=Number(e.target.value);
+  });
+}
+
+function addNewItemRow(){
+  const randId='i'+Date.now().toString().slice(-6);
+  tempItems.push({id: randId, t:'10:00', n:'รายการใหม่', c:'F', p: 0, pl: null});
+  buildEditorListHTML();
+}
+
+function deleteEditorItem(idx){
+  tempItems.splice(idx, 1);
+  buildEditorListHTML();
+}
+
+function saveEditorChanges(){
+  const dayId=document.getElementById('f-day').value;
+  const idx=DAYS.findIndex(d=>d.id===dayId);
+  if(idx>-1){
+    DAYS[idx].items=JSON.parse(JSON.stringify(tempItems));
+    saveAllData();
+    dash();
+    const itemBox=document.getElementById('items-'+dayId);
+    if(itemBox && itemBox.innerHTML!=='') {
+       itemBox.innerHTML = '';
+       renderDayScreen(dayId);
+    }
+    showToast('อัปเดตแผนเรียบร้อย! 🎉','#002060');
+    document.getElementById('editor-panel').classList.remove('on');
+  }
+}
+
+document.getElementById('tabs').addEventListener('click',e=>{
+  const btn=e.target.closest('.tab'); if(!btn)return;
+  const t=btn.dataset.t;
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  btn.classList.add('on'); document.getElementById('scr-'+t).classList.add('on');
+  if(t.startsWith('d')) {
+     const itemBox = document.getElementById('items-'+t);
+     if(itemBox && itemBox.innerHTML === '') renderDayScreen(t);
+  }
+  btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+  window.scrollTo(0,0);
+});
+
+dash();
+</script>
+</body>
+</html>
